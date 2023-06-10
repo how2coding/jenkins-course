@@ -71,6 +71,6 @@
 </tr>
 </tbody>
 </table><h3 id="docker-build">docker build</h3>
-<h2 id="lab-docker-based-reverse-proxy-with-nginx-for-multiple-domains">LAB: Docker based reverse proxy with Nginx for multiple domains</h2>
-<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/lab1.jpg" alt="enter image description here"></p>
+<p>]’[## LAB: Docker based reverse proxy with Nginx for multiple domains<br>
+<img src="https://file.wangchan.io/staticcontent/jenkinscourse/lab1.jpg" alt="enter image description here"></p>
 
