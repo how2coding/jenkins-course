@@ -168,6 +168,8 @@
 <pre><code>docker network ls
 </code></pre>
 <h3 id="mysql">Mysql</h3>
+<p>สามารถดู document ได้จาก<br>
+<a href="https://hub.docker.com/_/mysql">https://hub.docker.com/_/mysql</a></p>
 <ol>
 <li>
 <p>สร้าง directory mysql data</p>
