@@ -157,6 +157,9 @@
 <p>Kill one or more running containers</p>
 <pre><code>docker kill CONTAINER [CONTAINER...]
 </code></pre>
+<h3 id="clear-image-untagged">Clear Image untagged</h3>
+<pre><code>docker images -q |xargs docker rmi
+</code></pre>
 <h2 id="lab1">LAB1</h2>
 <h4 id="docker-based-reverse-proxy-with-nginx-for-multiple-domains">Docker based reverse proxy with Nginx for multiple domains</h4>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/lab1.jpg" alt="enter image description here"></p>
@@ -190,18 +193,71 @@
 <h3 id="reactnodejsnginx">React+nodejs+nginx</h3>
 <p><a href="https://github.com/how2coding/react-nodejs-nginx.git">https://github.com/how2coding/react-nodejs-nginx.git</a></p>
 <pre><code>git clone https://github.com/how2coding/react-nodejs-nginx.git
+
 cd react-nodejs-nginx
+
 docker build -f Dockerfile-prod -t react-nodejs-nginx .
+
 docker run --name react -p 8081:8080 -d react-nodejs-nginx:latest
+
 docker ps -a
+
 docker logs -f react 
 </code></pre>
+<ul>
+<li>
+<p>run hot reload<br>
+ใช้ default Dockerfile</p>
+<p><code>docker build -t react-nodejs-nginx .</code></p>
+<p>ทดสอบเข้า App<br>
+<a href="http://IP:8081">http://IP:8081</a></p>
+</li>
+</ul>
 <h3 id="crud-nodejs-mysql">Crud-nodejs-mysql</h3>
 <p><a href="https://github.com/how2coding/crud-nodejs-mysql.git">https://github.com/how2coding/crud-nodejs-mysql.git</a></p>
 <pre><code>git clone https://github.com/how2coding/crud-nodejs-mysql.git
+
+cd crud-nodejs-mysql
+
+vi src/db.js
 </code></pre>
+<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/db.png" alt="enter image description here"></p>
+<p>เข้า phpmyadmin เพื่อ สร้าง database<br>
+############################<br>
+– to create a new database<br>
+CREATE DATABASE customersdb;</p>
+<p>– creating a new table<br>
+CREATE TABLE customer (<br>
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,<br>
+name VARCHAR(50) NOT NULL,<br>
+address VARCHAR(100) NOT NULL,<br>
+phone VARCHAR(15)<br>
+);</p>
+<p>############################</p>
+<pre><code>docker build -t crud-nodejs-mysql .
+
+   
+docker run --network mynetwork --name crud-nodejs -p 8082:3000 -d crud-nodejs-mysql:latest
+
+
+ทดสอบเข้า App
+http://IP:8082
+</code></pre>
+<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/crud.PNG" alt="enter image description here"></p>
 <h3 id="nginx-reverse-proxy">nginx-reverse-proxy</h3>
 <p><a href="https://github.com/how2coding/nginx-reverseproxy.git">https://github.com/how2coding/nginx-reverseproxy.git</a></p>
 <pre><code>git clone https://github.com/how2coding/nginx-reverseproxy.git
+
+cd nginx-reverseproxy
+
+vi nginxproxy/nginx.conf
+</code></pre>
+<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/nginx.PNG" alt="enter image description here"></p>
+<pre><code>docker build -t nginx-reverseproxy .
+
+docker run --name nginx-reverseproxy -p 80:80 -p 443:443 \
+-v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.crt:/etc/nginx/conf.d/wangchan_io.crt \
+-v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.pem:/etc/nginx/conf.d/wangchan_io.pem \
+-d nginx-reverseproxy:latest
 </code></pre>
 
