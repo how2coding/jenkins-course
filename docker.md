@@ -34,12 +34,6 @@
 </ul>
 <h2 id="docker-command">Docker command</h2>
 <h3 id="docker-run">docker run</h3>
-<ul>
-<li>
-<p>ทดสอบ run docker nginx จาก registry</p>
-<p><code>docker run --name some-nginx -p 80:80 -d nginx</code></p>
-</li>
-</ul>
 
 <table>
 <thead>
@@ -70,7 +64,138 @@
 <td>Map volume paths</td>
 </tr>
 </tbody>
-</table><h3 id="docker-build">docker build</h3>
-<p>]’[## LAB: Docker based reverse proxy with Nginx for multiple domains<br>
-<img src="https://file.wangchan.io/staticcontent/jenkinscourse/lab1.jpg" alt="enter image description here"></p>
+</table><ul>
+<li>
+<p>example</p>
+<p><code>docker run --name some-nginx -p 80:80 -d nginx</code></p>
+</li>
+</ul>
+<h3 id="docker-build">docker build</h3>
+<pre><code>docker build &lt;option&gt; &lt;path&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-t</td>
+<td>tag name</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>Docker file name (option)</td>
+</tr>
+</tbody>
+</table><ul>
+<li>
+<p>example</p>
+<p><code>docker build -t some-nginx .</code></p>
+</li>
+</ul>
+<h3 id="docker-network">docker network</h3>
+<ul>
+<li><code>docker network ls</code></li>
+<li><code>docker network create -d bridge &lt; network name&gt;</code></li>
+<li><code>docker network inspect &lt; network name&gt;</code></li>
+</ul>
+<blockquote>
+<p>-d bridge = used to enable communication between docker containers on the same host internally</p>
+</blockquote>
+<h3 id="remove-container">Remove Container</h3>
+<pre><code>docker rm &lt;container_id&gt;
+</code></pre>
+<h3 id="remove-all-stop-container">Remove all stop container</h3>
+<ul>
+<li>docker rm $(docker ps -a -q)</li>
+</ul>
+<h3 id="remove-image">Remove Image</h3>
+<p><code>docker rmi &lt;image_id&gt;</code></p>
+<h3 id="logs-container">Logs container</h3>
+<p><code>docker logs -f &lt;container_id | container_name&gt;</code></p>
+<h3 id="tag-image">Tag Image</h3>
+<pre><code>docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+</code></pre>
+<h3 id="push-image">Push Image</h3>
+<pre><code>docker push [OPTIONS] NAME[:TAG]
+</code></pre>
+<h3 id="exec-container">Exec Container</h3>
+<pre><code>docker exec -it &lt;container_id| container_name&gt; COMMAND
+</code></pre>
+<ul>
+<li>
+<p>example</p>
+<pre><code> docker exec -it mycontainer pwd
+ docker exec -it mycontainer /bin/sh
+ docker exec -it mycontainer bash
+</code></pre>
+<h3 id="pull-image">Pull image</h3>
+<pre><code> `docker pull &lt; image name&gt;`
+</code></pre>
+</li>
+</ul>
+<h3 id="start-container">Start Container</h3>
+<pre><code>	docker start &lt;container_id | container_name&gt;
+</code></pre>
+<h3 id="stop-container">Stop container</h3>
+<pre><code>	docker stop &lt;container_id | container_name&gt;
+</code></pre>
+<h3 id="stop-all-container">Stop all container</h3>
+<pre><code>docker stop $(docker ps -a -q)
+</code></pre>
+<h3 id="list-all-container">List all container</h3>
+<pre><code>docker ps -a
+</code></pre>
+<h3 id="list-active-container">List active container</h3>
+<pre><code>docker ps
+</code></pre>
+<h3 id="docker-kill">Docker kill</h3>
+<p>Kill one or more running containers</p>
+<pre><code>docker kill CONTAINER [CONTAINER...]
+</code></pre>
+<h2 id="lab1">LAB1</h2>
+<h4 id="docker-based-reverse-proxy-with-nginx-for-multiple-domains">Docker based reverse proxy with Nginx for multiple domains</h4>
+<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/lab1.jpg" alt="enter image description here"></p>
+<h3 id="create-network">Create network</h3>
+<p><code>docker network create -d bridge mynetwork</code></p>
+<pre><code>docker network ls
+</code></pre>
+<h3 id="mysql">Mysql</h3>
+<ol>
+<li>
+<p>สร้าง directory mysql data</p>
+<p>sudo mkdir /root/mysqldata</p>
+</li>
+<li>
+<p>สร้าง container mysql</p>
+<p>docker run --name some-mysql --network mynetwork -p 3306:3306 -v /root/mysqldata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql</p>
+</li>
+<li>
+<p>สร้าง container phpmyadmin</p>
+<p>docker run --name myadmin --network mynetwork -d --link some-mysql:db -p 8083:80 phpmyadmin/phpmyadmin</p>
+<p>ทดสอบเข้า phpmyadmin</p>
+<p><a href="http://IP:8083">http://IP:8083</a><br>
+<img src="https://file.wangchan.io/staticcontent/jenkinscourse/php.PNG" alt="enter image description here"></p>
+</li>
+<li>
+<p>ตรวจสอบ IP Address</p>
+<p>docker network inspect mynetwork</p>
+</li>
+</ol>
+<h3 id="reactnodejsnginx">React+nodejs+nginx</h3>
+<p><a href="https://github.com/how2coding/react-nodejs-nginx.git">https://github.com/how2coding/react-nodejs-nginx.git</a></p>
+<pre><code>git clone https://github.com/how2coding/react-nodejs-nginx.git
+</code></pre>
+<h3 id="crud-nodejs-mysql">Crud-nodejs-mysql</h3>
+<p><a href="https://github.com/how2coding/crud-nodejs-mysql.git">https://github.com/how2coding/crud-nodejs-mysql.git</a></p>
+<pre><code>git clone https://github.com/how2coding/crud-nodejs-mysql.git
+</code></pre>
+<h3 id="nginx-reverse-proxy">nginx-reverse-proxy</h3>
+<p><a href="https://github.com/how2coding/nginx-reverseproxy.git">https://github.com/how2coding/nginx-reverseproxy.git</a></p>
+<pre><code>git clone https://github.com/how2coding/nginx-reverseproxy.git
+</code></pre>
 
