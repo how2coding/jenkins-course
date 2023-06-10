@@ -204,15 +204,8 @@ docker ps -a
 
 docker logs -f react 
 </code></pre>
-<ul>
-<li>
-<p>run hot reload<br>
-ใช้ default Dockerfile</p>
-<p><code>docker build -t react-nodejs-nginx .</code></p>
 <p>ทดสอบเข้า App<br>
 <a href="http://IP:8081">http://IP:8081</a></p>
-</li>
-</ul>
 <h3 id="crud-nodejs-mysql">Crud-nodejs-mysql</h3>
 <p><a href="https://github.com/how2coding/crud-nodejs-mysql.git">https://github.com/how2coding/crud-nodejs-mysql.git</a></p>
 <pre><code>git clone https://github.com/how2coding/crud-nodejs-mysql.git
