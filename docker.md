@@ -186,9 +186,15 @@
 <p>docker network inspect mynetwork</p>
 </li>
 </ol>
+<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/ipnework.png" alt="enter image description here"></p>
 <h3 id="reactnodejsnginx">React+nodejs+nginx</h3>
 <p><a href="https://github.com/how2coding/react-nodejs-nginx.git">https://github.com/how2coding/react-nodejs-nginx.git</a></p>
 <pre><code>git clone https://github.com/how2coding/react-nodejs-nginx.git
+cd react-nodejs-nginx
+docker build -f Dockerfile-prod -t react-nodejs-nginx .
+docker run --name react -p 8081:8080 -d react-nodejs-nginx:latest
+docker ps -a
+docker logs -f react 
 </code></pre>
 <h3 id="crud-nodejs-mysql">Crud-nodejs-mysql</h3>
 <p><a href="https://github.com/how2coding/crud-nodejs-mysql.git">https://github.com/how2coding/crud-nodejs-mysql.git</a></p>
