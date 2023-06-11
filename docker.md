@@ -164,7 +164,7 @@
 <h4 id="docker-based-reverse-proxy-with-nginx-for-multiple-domains">Docker based reverse proxy with Nginx for multiple domains</h4>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/lab1.jpg" alt="enter image description here"></p>
 <h3 id="create-network">Create network</h3>
-<p><code>docker network create -d bridge mynetwork</code></p>
+<p><code>docker network create -d bridge kntnetwork</code></p>
 <pre><code>docker network ls
 </code></pre>
 <h3 id="mysql">Mysql</h3>
@@ -177,18 +177,18 @@
 </li>
 <li>
 <p>สร้าง container mysql</p>
-<p>docker run --name some-mysql --network mynetwork -p 3306:3306 -v /root/mysqldata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql</p>
+<p>docker run --name some-mysql --network kntnetwork -p 3306:3306 -v /root/mysqldata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql</p>
 </li>
 <li>
 <p>สร้าง container phpmyadmin</p>
-<p>docker run --name myadmin --network mynetwork -d --link some-mysql:db -p 8083:80 phpmyadmin/phpmyadmin</p>
+<p>docker run --name myadmin --network kntnetwork -d --link some-mysql:db -p 8083:80 phpmyadmin/phpmyadmin</p>
 <p>ทดสอบเข้า phpmyadmin</p>
 <p><a href="http://IP:8083">http://IP:8083</a><br>
 <img src="https://file.wangchan.io/staticcontent/jenkinscourse/php.PNG" alt="enter image description here"></p>
 </li>
 <li>
 <p>ตรวจสอบ IP Address</p>
-<p>docker network inspect mynetwork</p>
+<p>docker network inspect kntnetwork</p>
 </li>
 </ol>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/ipnework.png" alt="enter image description here"></p>
@@ -232,7 +232,7 @@ phone VARCHAR(15)<br>
 <pre><code>docker build -t crud-nodejs-mysql .
 
    
-docker run --network mynetwork --name crud-nodejs -p 8082:3000 -d crud-nodejs-mysql:latest
+docker run --network kntnetwork --name crud-nodejs -p 8082:3000 -d crud-nodejs-mysql:latest
 
 
 ทดสอบเข้า App
