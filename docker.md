@@ -13,8 +13,17 @@
 <h1 id="web-server">Web server</h1>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/oldstyle%20webserver.jpg" alt="enter image description here"></p>
 <h2 id="ecosystem">Ecosystem</h2>
-<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/microservice.jpg" alt="enter image description here"></p>
-<h2 id="architecture">Architecture</h2>
+<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/micro.PNG" alt="enter image description here"></p>
+<h3 id="microservice">Microservice</h3>
+<h4 id="ข้อดี">ข้อดี</h4>
+<ol>
+<li>สามารถมีหลายทีมพัฒนา</li>
+<li>สามารถมีหลาย Technology</li>
+<li>จัด sizing ของ server ตาม module ที่ใช้งาน</li>
+<li>แยก deploy อิสระไม่กวนกัน</li>
+</ol>
+<p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/microservice2.jpg" alt="enter image description here"></p>
+<h2 id="docker-architecture">Docker Architecture</h2>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/architecture.svg" alt="enter image description here"></p>
 <ol>
 <li>docker pull ดึง image จาก registry</li>
