@@ -167,7 +167,9 @@
 <h4 id="docker-based-reverse-proxy-with-nginx-for-multiple-domains">Docker based reverse proxy with Nginx for multiple domains</h4>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/lab1.jpg" alt="enter image description here"></p>
 <h3 id="create-network">Create network</h3>
-<p><code>docker network create -d bridge kntnetwork</code></p>
+<pre><code>docker network create -d bridge kntnetwork
+</code></pre>
+<h4 id="section"></h4>
 <pre><code>docker network ls
 </code></pre>
 <h3 id="mysql">Mysql</h3>
@@ -199,7 +201,7 @@
 <p><a href="https://github.com/how2coding/react-nodejs-nginx.git">https://github.com/how2coding/react-nodejs-nginx.git</a></p>
 <pre><code>git clone https://github.com/how2coding/react-nodejs-nginx.git
 </code></pre>
-<h4 id="section"></h4>
+<h4 id="section-1"></h4>
 <pre><code>cd react-nodejs-nginx
 
 docker build -f Dockerfile-prod -t react-nodejs-nginx .
@@ -254,7 +256,7 @@ vi nginxproxy/nginx.conf
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/nginx.PNG" alt="enter image description here"></p>
 <pre><code>docker build -t nginx-reverseproxy .
 </code></pre>
-<h3 id="section-1"></h3>
+<h3 id="section-2"></h3>
 <pre><code>docker run --name nginx-reverseproxy -p 80:80 -p 443:443 \
 -v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.crt:/etc/nginx/conf.d/wangchan_io.crt \
 -v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.pem:/etc/nginx/conf.d/wangchan_io.pem \
