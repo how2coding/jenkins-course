@@ -175,52 +175,53 @@
 <h3 id="mysql">Mysql</h3>
 <p>สามารถดู document ได้จาก<br>
 <a href="https://hub.docker.com/_/mysql">https://hub.docker.com/_/mysql</a></p>
-<ol>
-<li>
-<p>สร้าง directory mysql data</p>
-<p>sudo mkdir /root/mysqldata</p>
-</li>
-<li>
-<p>สร้าง container mysql</p>
-<p>docker run --name some-mysql --network kntnetwork -p 3306:3306 -v /root/mysqldata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql</p>
-</li>
-<li>
-<p>สร้าง container phpmyadmin</p>
-<p>docker run --name myadmin --network kntnetwork -d --link some-mysql:db -p 8083:80 phpmyadmin/phpmyadmin</p>
+<p>1 สร้าง directory mysql data</p>
+<pre><code>sudo mkdir /root/mysqldata
+</code></pre>
+<p>2 สร้าง container mysql</p>
+<pre><code>docker run --name some-mysql --network kntnetwork -p 3306:3306 -v /root/mysqldata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql
+</code></pre>
+<p>3 สร้าง container phpmyadmin</p>
+<pre><code>docker run --name myadmin --network kntnetwork -d --link some-mysql:db -p 8083:80 phpmyadmin/phpmyadmin
+</code></pre>
+<h4 id="section-1"></h4>
 <p>ทดสอบเข้า phpmyadmin</p>
 <p><a href="http://IP:8083">http://IP:8083</a><br>
-<img src="https://file.wangchan.io/staticcontent/jenkinscourse/php.PNG" alt="enter image description here"></p>
-</li>
-<li>
-<p>ตรวจสอบ IP Address</p>
-<p>docker network inspect kntnetwork</p>
-</li>
-</ol>
+<img src="https://file.wangchan.io/staticcontent/jenkinscourse/php.PNG" alt="enter image description here"><br>
+5. ตรวจสอบ IP Address</p>
+<pre><code>docker network inspect kntnetwork
+</code></pre>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/ipnework.png" alt="enter image description here"></p>
 <h3 id="reactnodejsnginx">React+nodejs+nginx</h3>
 <p><a href="https://github.com/how2coding/react-nodejs-nginx.git">https://github.com/how2coding/react-nodejs-nginx.git</a></p>
 <pre><code>git clone https://github.com/how2coding/react-nodejs-nginx.git
 </code></pre>
-<h4 id="section-1"></h4>
+<h4 id="section-2"></h4>
 <pre><code>cd react-nodejs-nginx
-
-docker build -f Dockerfile-prod -t react-nodejs-nginx .
-
-docker run --name react -p 8081:8080 -d react-nodejs-nginx:latest
-
-docker ps -a
-
-docker logs -f react 
+</code></pre>
+<h4 id="section-3"></h4>
+<pre><code>docker build -f Dockerfile-prod -t react-nodejs-nginx .
+</code></pre>
+<h4 id="section-4"></h4>
+<pre><code>docker run --name react -p 8081:8080 -d react-nodejs-nginx:latest
+</code></pre>
+<h4 id="section-5"></h4>
+<pre><code>docker ps -a
+</code></pre>
+<h4 id="section-6"></h4>
+<pre><code>docker logs -f react 
 </code></pre>
 <p>ทดสอบเข้า App<br>
 <a href="http://IP:8081">http://IP:8081</a></p>
 <h3 id="crud-nodejs-mysql">Crud-nodejs-mysql</h3>
 <p><a href="https://github.com/how2coding/crud-nodejs-mysql.git">https://github.com/how2coding/crud-nodejs-mysql.git</a></p>
 <pre><code>git clone https://github.com/how2coding/crud-nodejs-mysql.git
-
-cd crud-nodejs-mysql
-
-vi src/db.js
+</code></pre>
+<h4 id="section-7"></h4>
+<pre><code>cd crud-nodejs-mysql
+</code></pre>
+<h4 id="section-8"></h4>
+<pre><code>vi src/db.js
 </code></pre>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/db.png" alt="enter image description here"></p>
 <p>เข้า phpmyadmin เพื่อ สร้าง database<br>
@@ -236,27 +237,28 @@ phone VARCHAR(15)<br>
 );</p>
 <p>############################</p>
 <pre><code>docker build -t crud-nodejs-mysql .
-
-   
-docker run --network kntnetwork --name crud-nodejs -p 8082:3000 -d crud-nodejs-mysql:latest
-
-
-ทดสอบเข้า App
-http://IP:8082
 </code></pre>
+<h4 id="section-9"></h4>
+<pre><code>docker run --network kntnetwork --name crud-nodejs -p 8082:3000 -d crud-nodejs-mysql:latest
+</code></pre>
+<h4 id="section-10"></h4>
+<p>ทดสอบเข้า App<br>
+<a href="http://IP:8082">http://IP:8082</a></p>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/crud.PNG" alt="enter image description here"></p>
 <h3 id="nginx-reverse-proxy">nginx-reverse-proxy</h3>
 <p><a href="https://github.com/how2coding/nginx-reverseproxy.git">https://github.com/how2coding/nginx-reverseproxy.git</a></p>
 <pre><code>git clone https://github.com/how2coding/nginx-reverseproxy.git
-
-cd nginx-reverseproxy
-
-vi nginxproxy/nginx.conf
+</code></pre>
+<h4 id="section-11"></h4>
+<pre><code>cd nginx-reverseproxy
+</code></pre>
+<h4 id="section-12"></h4>
+<pre><code>vi nginxproxy/nginx.conf
 </code></pre>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/nginx.PNG" alt="enter image description here"></p>
 <pre><code>docker build -t nginx-reverseproxy .
 </code></pre>
-<h3 id="section-2"></h3>
+<h3 id="section-13"></h3>
 <pre><code>docker run --name nginx-reverseproxy -p 80:80 -p 443:443 \
 -v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.crt:/etc/nginx/conf.d/wangchan_io.crt \
 -v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.pem:/etc/nginx/conf.d/wangchan_io.pem \
