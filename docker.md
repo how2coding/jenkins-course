@@ -261,8 +261,8 @@ vi nginxproxy/nginx.conf
 </code></pre>
 <h3 id="section"></h3>
 <pre><code>docker run --name nginx-reverseproxy -p 80:80 -p 443:443 \
--v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.crt:/etc/nginx/conf.d/wangchan_io.crt \\
--v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.pem:/etc/nginx/conf.d/wangchan_io.pem \\
+-v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.crt:/etc/nginx/conf.d/wangchan_io.crt \
+-v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.pem:/etc/nginx/conf.d/wangchan_io.pem \
 -d nginx-reverseproxy:latest
 </code></pre>
 
