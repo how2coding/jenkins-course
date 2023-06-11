@@ -101,17 +101,13 @@
 </tr>
 </tbody>
 </table><ul>
-<li>
-<p>example</p>
+<li>example</li>
+</ul>
 <p><code>docker build -t some-nginx .</code></p>
-</li>
-</ul>
 <h3 id="docker-network">docker network</h3>
-<ul>
-<li><code>docker network ls</code></li>
-<li><code>docker network create -d bridge &lt; network name&gt;</code></li>
-<li><code>docker network inspect &lt; network name&gt;</code></li>
-</ul>
+<p><code>docker network ls</code><br>
+<code>docker network create -d bridge &lt; network name&gt;</code><br>
+<code>docker network inspect &lt; network name&gt;</code></p>
 <blockquote>
 <p>-d bridge = used to enable communication between docker containers on the same host internally</p>
 </blockquote>
@@ -119,9 +115,7 @@
 <pre><code>docker rm &lt;container_id&gt;
 </code></pre>
 <h3 id="remove-all-stop-container">Remove all stop container</h3>
-<ul>
-<li>docker rm $(docker ps -a -q)</li>
-</ul>
+<p><code>docker rm $(docker ps -a -q)</code></p>
 <h3 id="remove-image">Remove Image</h3>
 <p><code>docker rmi &lt;image_id&gt;</code></p>
 <h3 id="logs-container">Logs container</h3>
@@ -142,25 +136,25 @@
  docker exec -it mycontainer /bin/sh
  docker exec -it mycontainer bash
 </code></pre>
-<h3 id="pull-image">Pull image</h3>
-<pre><code> `docker pull &lt; image name&gt;`
-</code></pre>
 </li>
 </ul>
+<h3 id="pull-image">Pull image</h3>
+<pre><code>docker pull &lt; image name&gt;`
+</code></pre>
 <h3 id="start-container">Start Container</h3>
-<pre><code>	docker start &lt;container_id | container_name&gt;
+<pre><code>docker start &lt;container_id | container_name&gt;
 </code></pre>
 <h3 id="stop-container">Stop container</h3>
-<pre><code>	docker stop &lt;container_id | container_name&gt;
+<pre><code>docker stop &lt;container_id | container_name&gt;
 </code></pre>
 <h3 id="stop-all-container">Stop all container</h3>
 <pre><code>docker stop $(docker ps -a -q)
 </code></pre>
-<h3 id="list-all-container">List all container</h3>
-<pre><code>docker ps -a
-</code></pre>
 <h3 id="list-active-container">List active container</h3>
 <pre><code>docker ps
+</code></pre>
+<h3 id="list-all-container">List all container</h3>
+<pre><code>docker ps -a
 </code></pre>
 <h3 id="docker-kill">Docker kill</h3>
 <p>Kill one or more running containers</p>
