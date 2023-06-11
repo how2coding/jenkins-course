@@ -198,8 +198,9 @@
 <h3 id="reactnodejsnginx">React+nodejs+nginx</h3>
 <p><a href="https://github.com/how2coding/react-nodejs-nginx.git">https://github.com/how2coding/react-nodejs-nginx.git</a></p>
 <pre><code>git clone https://github.com/how2coding/react-nodejs-nginx.git
-
-cd react-nodejs-nginx
+</code></pre>
+<h4 id="section"></h4>
+<pre><code>cd react-nodejs-nginx
 
 docker build -f Dockerfile-prod -t react-nodejs-nginx .
 
@@ -253,7 +254,7 @@ vi nginxproxy/nginx.conf
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/nginx.PNG" alt="enter image description here"></p>
 <pre><code>docker build -t nginx-reverseproxy .
 </code></pre>
-<h3 id="section"></h3>
+<h3 id="section-1"></h3>
 <pre><code>docker run --name nginx-reverseproxy -p 80:80 -p 443:443 \
 -v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.crt:/etc/nginx/conf.d/wangchan_io.crt \
 -v /root/lab1/nginx-reverseproxy/nginxproxy/wangchan_io.pem:/etc/nginx/conf.d/wangchan_io.pem \
