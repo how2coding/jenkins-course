@@ -47,4 +47,24 @@ Optionally append &amp;cause=Cause+Text to provide text that will be included in
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> GitHub hook trigger for GITScm polling วิธีนี้คือเมื่อ source codeใน github change ให้ GitHub Plugin   trigger มาที่ jenkins</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Poll SCM วิธีนี้คือกำหนดเวลาที่ jenkins จะไป scan ใน SCM ถ้ามีการ change ก็จะ trigger</li>
 </ul>
+<h3 id="parameter">Parameter</h3>
+<h3 id="agents">Agents</h3>
+<p><strong>goto</strong><br>
+Dashboard &gt; Manage Jenkins &gt; Configure Global Security</p>
+<h3 id="install-jdk-11-at-agent">install jdk 11 at agent</h3>
+<pre><code>sudo apt-get install openjdk-11-jdk
+
+java -version
+</code></pre>
+<h3 id="pipeline-syntax">Pipeline syntax</h3>
+<p><a href="https://www.jenkins.io/doc/book/pipeline/syntax/">https://www.jenkins.io/doc/book/pipeline/syntax/</a></p>
+<h3 id="section">Section</h3>
+<h4 id="agent-section">agent section</h4>
+<h4 id="stages-section">stages section</h4>
+<h4 id="stage-section">stage section</h4>
+<h4 id="steps-section">steps section</h4>
+<h4 id="post-section">post section</h4>
+<h4 id="environment">environment</h4>
+<h4 id="parameters">parameters</h4>
+<h4 id="when">when</h4>
 
