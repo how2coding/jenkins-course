@@ -1,0 +1,39 @@
+pipeline {
+    agent{ 
+        label 'ubuntu1'
+        
+    }
+
+    parameters {
+      choice choices: ['PROD', 'UAT'], description: 'Environment to deploy', name: 'ENV'
+    }
+
+
+    stages {
+        stage('Deploy to Production') {
+            when {
+                expression { 
+                   return params.ENV == 'PROD'
+                }
+            }
+            steps {
+               sh "echo deploy to production"
+            }
+            
+        }
+        
+        stage('Deploy to UAT') {
+            when {
+                expression { 
+                   return params.ENV == 'UAT'
+                }
+            }
+            steps {
+               sh "echo deploy to uat"
+               sh "ls -lst"
+               sh "docker ps -a"
+            }
+            
+        }
+    }
+}

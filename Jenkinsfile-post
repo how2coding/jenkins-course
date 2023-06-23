@@ -1,0 +1,37 @@
+
+
+
+pipeline {
+    agent any
+    stages {
+        stage('hello1') {
+            steps {
+                sh "echo hello1"
+            }
+        }
+        stage('sleep') {
+            steps {
+                sh "echo hello2"
+            }
+        }
+        stage('hello2') {
+            steps {
+                sh "echo hello3"
+            }
+        }
+    }
+
+    post { 
+        always { 
+            echo 'always'
+        }
+
+        success { 
+            echo 'success'
+        }
+
+        failure { 
+            echo 'failure'
+        }
+    }
+}
