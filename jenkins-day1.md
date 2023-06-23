@@ -19,7 +19,9 @@ Continuous Integration / Continuous Deployment</p>
 <p><a href="https://www.jenkins.io/doc/book/installing/">https://www.jenkins.io/doc/book/installing/</a></p>
 <h2 id="working-with-projects">Working with projects</h2>
 <ol>
-<li>Freestyle project</li>
+<li>Freestyle project<br>
+<img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/jenkins5.jpg" alt="enter image description here"></li>
 <li>Pipeline</li>
 </ol>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/pipe.png" alt="enter image description here"></p>
 
