@@ -47,4 +47,5 @@ Optionally append &amp;cause=Cause+Text to provide text that will be included in
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> GitHub hook trigger for GITScm polling วิธีนี้คือเมื่อ source codeใน github change ให้ GitHub Plugin   trigger มาที่ jenkins</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Poll SCM วิธีนี้คือกำหนดเวลาที่ jenkins จะไป scan ใน SCM ถ้ามีการ change ก็จะ trigger</li>
 </ul>
+<h3 id="parameter">Parameter</h3>
 
