@@ -83,4 +83,8 @@ java -version
 <p>install plugin : Email Extension</p>
 <h3 id="plugin">plugin</h3>
 <p><a href="https://plugins.jenkins.io/">https://plugins.jenkins.io/</a></p>
+<h3 id="selenium-webdriver">Selenium-webdriver</h3>
+<p><a href="https://www.lambdatest.com/blog/jenkins-integration-with-selenium-webdriver/">https://www.lambdatest.com/blog/jenkins-integration-with-selenium-webdriver/</a></p>
+<h3 id="api-test-with-junit">API Test with JUnit</h3>
+<p><a href="https://www.youtube.com/watch?v=SCv4BH9pDJA">https://www.youtube.com/watch?v=SCv4BH9pDJA</a></p>
 
