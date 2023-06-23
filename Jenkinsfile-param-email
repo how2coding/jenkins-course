@@ -1,0 +1,65 @@
+pipeline {
+    agent any
+
+
+
+    stages {
+
+        stage('build') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], 
+                    userRemoteConfigs: [[credentialsId: 'token-gitlab-fandom_web_app', 
+                    url: 'https://gitlab.com/mrdynamic/fandom_web_app.git']]])
+                sh "ls -lst"
+            }
+        }
+
+
+        stage('build') {
+            steps {
+             
+               sh "echo build"
+            }
+            
+        }
+        
+        stage('deploy') {
+          
+            steps {
+               sh "echo deploy"
+               
+            }
+            
+        }
+    }
+
+     post { 
+        always { 
+            echo 'always'
+        }
+
+        success { 
+            emailext attachLog: true, 
+                subject: 'jenkins build $PROJECT_NAME success', 
+                recipientProviders: [
+                [$class: 'DevelopersRecipientProvider'],
+                [$class: 'RequesterRecipientProvider']], 
+                 body: 'Hello Team,<br/><br/>Project: $PROJECT_NAME  <br>Build Number: #$BUILD_NUMBER is <font color="green">success</font> <br>  Best Regards',
+                 to: 'it@abc.com'
+
+            echo 'success'
+        }
+
+        failure { 
+            emailext attachLog: true, 
+                subject: 'jenkins build $PROJECT_NAME failure', 
+                recipientProviders: [
+                [$class: 'DevelopersRecipientProvider'],
+                [$class: 'RequesterRecipientProvider']], 
+                 body: 'Hello Team,<br/><br/>Project: $PROJECT_NAME  <br>Build Number: #$BUILD_NUMBER is <font color="green">failure</font> <br>  Best Regards',
+                 to: 'it@abc.com'
+
+            echo 'failure'
+        }
+    }
+}

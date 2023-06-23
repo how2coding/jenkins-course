@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+
+
+    stages {
+
+        stage('build') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], 
+                    userRemoteConfigs: [[credentialsId: 'token-gitlab-fandom_web_app', 
+                    url: 'https://gitlab.com/mrdynamic/fandom_web_app.git']]])
+                sh "ls -lst"
+            }
+        }
+
+
+        stage('build') {
+            steps {
+             
+               sh "echo build"
+            }
+            
+        }
+        
+        stage('deploy') {
+          
+            steps {
+               sh "echo deploy"
+               
+            }
+            
+        }
+    }
+}
