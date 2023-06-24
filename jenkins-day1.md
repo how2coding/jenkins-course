@@ -90,5 +90,8 @@ java -version
 <p><strong><a href="https://www.npmjs.com/package/newman">Newman</a></strong> is a CLI (command line interface) program that allows you to run Postman Collections directly from the command line</p>
 <pre><code>npm install -g newman
 </code></pre>
+<p>.</p>
+<pre><code>npm install -g newman-reporter-htmlextra
+</code></pre>
 <p><a href="https://github.com/how2coding/Employee-management-System.git">https://github.com/how2coding/Employee-management-System.git</a></p>
 
