@@ -29,6 +29,7 @@ Continuous Integration / Continuous Deployment</p>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> <strong>Discard old builds</strong> ใช้ใส่เงื่อนไขการลบ log build ทิ้งเพื่อประหยัด disk</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> <strong>GitHub project</strong> ใส่ url เพื่อแสดง link ที่ menuของ project</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> <strong>This project is parameterized</strong> ใช้ใส่ parameter กำหนดเองเพื่อนำไปเป็น condition ของ การ build</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Restrict where this project can be run คือกำหนด nodeให้ job</li>
 </ul>
 <h3 id="source-code-management">Source Code Management</h3>
 <ul>
