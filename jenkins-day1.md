@@ -5,6 +5,7 @@
 
 <h1 id="cicd">CI/CD</h1>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/ci-cd.png" alt="enter image description here"></p>
+<p>CI/CD คือ  เป็นกระบวนการทำงานการพัฒนาที่เริ่มตั้งแต่ฝั่ง Dev ไปจบที่การ Delivery</p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/cicd2.png" alt="enter image description here"><br>
 Continuous Integration / Continuous Deployment</p>
 <p>DevOps<br>
