@@ -39,6 +39,7 @@ pipeline {
         }
 
         success { 
+          
             emailext attachLog: true, 
                 subject: 'jenkins build $PROJECT_NAME success', 
                 recipientProviders: [

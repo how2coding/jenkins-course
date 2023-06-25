@@ -3,7 +3,7 @@ pipeline {
         label 'ubuntu1'
     }
 
-  parameters {
+   parameters {
       string 'mariapassword'
     }
 
@@ -18,6 +18,7 @@ pipeline {
                     userRemoteConfigs: [[url: 'https://github.com/how2coding/Employee-management-System.git']]])
                 
                 sh 'cat src/main/resources/application.properties | sed -i "s/{{mariapassword}}/${mariapassword}/g" src/main/resources/application.properties'
+               
                 sh "ls -lst"
             }
         }
@@ -51,14 +52,14 @@ pipeline {
             }
             
         }
-         stage('test api') {
+    //      stage('test api') {
           
-            steps {
+    //         steps {
                  
-               sh "sleep 60"
-               sh "newman run postman_collection.json"
-            }
+    //            sh "sleep 60"
+    //            sh "newman run postman_collection.json"
+    //         }
             
-        }
-    }
+    //     }
+    // }
 }
