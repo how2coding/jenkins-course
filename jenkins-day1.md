@@ -5,18 +5,30 @@
 
 <h1 id="cicd">CI/CD</h1>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/ci-cd.png" alt="enter image description here"></p>
+<p>CI/CD คือ  เป็นกระบวนการทำงานการพัฒนาที่เริ่มตั้งแต่ฝั่ง Dev ไปจบที่การ Delivery</p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/cicd2.png" alt="enter image description here"><br>
 Continuous Integration / Continuous Deployment</p>
+<p>DevOps<br>
+Dev = Developer<br>
+Ops= System engineer, Network engineer</p>
+<h3 id="ข้อดีของ-devops">ข้อดีของ DevOps</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> เชื่อมการทำงานของ microservice ที่มีหลาย technology และหลาย environment</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> เชื่อม ระหว่าง developer team และ operation team</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> ลดการพึ่งพาคน ๆ เดียว</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> การ scale ระบบสามารถทำได้ง่าย</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> การกู้คืนระบบ สามารถทำได้รวดเร็ว</li>
+</ul>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/cicd3.png" alt="enter image description here"></p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/cicd4.png" alt="enter image description here"></p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/cicdtool.png" alt="enter image description here"></p>
 <h1 id="jenkins">Jenkins</h1>
 <p>open source automation server, Jenkins provides hundreds of plugins to support building, testing, and delivering or deploying software</p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/jenkin1.png" alt="enter image description here"></p>
-<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/jenkin2.png" alt="enter image description here"></p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/jenkin3.png" alt="enter image description here"></p>
 <h2 id="installing-jenkins">Installing Jenkins</h2>
 <p><a href="https://www.jenkins.io/doc/book/installing/">https://www.jenkins.io/doc/book/installing/</a></p>
+<p><a href="https://github.com/how2coding/jenkins-course/blob/master/installJenkins.docx">https://github.com/how2coding/jenkins-course/blob/master/installJenkins.docx</a></p>
 <h2 id="working-with-projects">Working with projects</h2>
 <ol>
 <li>Freestyle project<br>
@@ -49,8 +61,10 @@ Optionally append &amp;cause=Cause+Text to provide text that will be included in
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Poll SCM วิธีนี้คือกำหนดเวลาที่ jenkins จะไป scan ใน SCM ถ้ามีการ change ก็จะ trigger</li>
 </ul>
 <h3 id="parameter">Parameter</h3>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/set2/pipe5.png" alt="enter image description here"></p>
 <h3 id="agents">Agents</h3>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/set2/slave1.png" alt="enter image description here"></p>
+<h3 id="ขั้นตอน-setup">ขั้นตอน setup</h3>
 <p><strong>goto</strong><br>
 Dashboard &gt; Manage Jenkins &gt; Configure Global Security</p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/set2/agent2.PNG" alt="enter image description here"></p>
@@ -84,6 +98,7 @@ java -version
 <p>install plugin : Email Extension</p>
 <h3 id="plugin">plugin</h3>
 <p><a href="https://plugins.jenkins.io/">https://plugins.jenkins.io/</a></p>
+<p><a href="https://github.com/how2coding/jenkins-course/blob/master/jenkinsPlugin.docx">https://github.com/how2coding/jenkins-course/blob/master/jenkinsPlugin.docx</a></p>
 <h3 id="api-test-with-newman">API Test with Newman</h3>
 <p><strong><a href="https://www.npmjs.com/package/newman">Newman</a></strong> is a CLI (command line interface) program that allows you to run Postman Collections directly from the command line</p>
 <pre><code>npm install -g newman
