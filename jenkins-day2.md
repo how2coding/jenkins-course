@@ -42,9 +42,16 @@ copy agent.jar to dicrectory d:\jenkins</p>
 <pre><code>nssm install jenkins_agent "java" "-jar d:\jenkins\agent.jar -jnlpUrl http://3.1.40.91:8082/computer/build/jenkins-agent.jnlp -secret fe758454c3599cceb089e321690f940cbf1f68cd5b2d8d9ee45ae423c2ae910a -workDir d:\jenkins"
 </code></pre>
 <h2 id="deploy-docker">Deploy docker</h2>
+<p><a href="https://github.com/how2coding/react-nodejs-nginx.git">https://github.com/how2coding/react-nodejs-nginx.git</a></p>
 <h2 id="deploy-app-at-host">Deploy app at host</h2>
 <h2 id="deploy-iis">Deploy IIS</h2>
 <p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=43717">Download microsoft web deploy</a></p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy.png" alt="enter image description here"></p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy2.png" alt="enter image description here"></p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy3.png" alt="enter image description here"></p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy4.png" alt="enter image description here"></p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy5.png" alt="enter image description here"></p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy6.png" alt="enter image description here"></p>
 <h2 id="seperate-machine">Seperate Machine</h2>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/architecture.png" alt="enter image description here"></p>
 <h2 id="install-docker-registry">install docker registry</h2>
