@@ -47,4 +47,61 @@ copy agent.jar to dicrectory d:\jenkins</p>
 <p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=43717">Download microsoft web deploy</a></p>
 <h2 id="seperate-machine">Seperate Machine</h2>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/architecture.png" alt="enter image description here"></p>
+<h2 id="install-docker-registry">install docker registry</h2>
+<p><a href="https://docs.docker.com/registry/deploying/">https://docs.docker.com/registry/deploying/</a></p>
+<p>create docker-compose.yaml</p>
+<pre class=" language-console"><code class="prism  language-console"> version: '3'
+
+services:
+  reverse:
+    container_name: nginxproxy
+    hostname: reverse
+    image: nginx
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /root/nginx:/etc/nginx
+
+</code></pre>
+<p>create file /root/nginx/nginx.conf</p>
+<pre><code>  events {
+  worker_connections  4096;  ## Default: 1024
+}
+
+http {
+   client_max_body_size 100M;
+
+   server {
+
+  listen 443 ssl;
+
+  ssl_certificate wangchan.crt;
+
+  ssl_certificate_key wangchan.key;
+
+  server_name registry.wangchan.io;
+  location / {
+     proxy_pass http://13.213.137.47:5000;
+      }
+   }
+}
+</code></pre>
+<h3 id="section-1"></h3>
+<pre><code>docker-compose up -d
+
+
+docker tag react-nodejs-nginx registry.wangchan.io:5000/react-nodejs-nginx
+
+
+
+docker push registry.wangchan.io:5000/react-nodejs-nginx
+</code></pre>
+<p>vi /etc/docker/daemon.json</p>
+<pre><code>{ "insecure-registries":["registry.wangchan.io:5000"] }
+</code></pre>
+<p>sudo service docker restart</p>
+<pre><code>docker push registry.wangchan.io:5000/react-nodejs-nginx
+</code></pre>
 
