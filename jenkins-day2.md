@@ -44,10 +44,12 @@ copy agent.jar to dicrectory c:\jenkins</p>
 </code></pre>
 <h2 id="traditional-deployment">Traditional Deployment</h2>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/d1.png" alt="enter image description here"></p>
+<p><a href="https://github.com/how2coding/react-nodejs-nginx/blob/main/Jenkinsfile_deploy_on_vm">https://github.com/how2coding/react-nodejs-nginx/blob/main/Jenkinsfile_deploy_on_vm</a></p>
 <h2 id="docker-deployment">Docker Deployment</h2>
-<p><a href="https://github.com/how2coding/react-nodejs-nginx.git">https://github.com/how2coding/react-nodejs-nginx.git</a></p>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/d2.png" alt="enter image description here"></p>
+<p><a href="https://github.com/how2coding/react-nodejs-nginx/blob/main/Jenkinsfile_deploy_docker">https://github.com/how2coding/react-nodejs-nginx/blob/main/Jenkinsfile_deploy_docker</a></p>
 <h2 id="deploy-asp-.net-mvc-applications-to-iis">Deploy ASP .Net MVC Applications to IIS</h2>
+<p><a href="https://github.com/how2coding/MVCHelloWorld">https://github.com/how2coding/MVCHelloWorld</a></p>
 <p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=43717">Download microsoft web deploy</a></p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy.png" alt="enter image description here"></p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy2.png" alt="enter image description here"></p>
@@ -114,4 +116,5 @@ docker push registry.wangchan.io:5000/react-nodejs-nginx
 <p>sudo service docker restart</p>
 <pre><code>docker push registry.wangchan.io:5000/react-nodejs-nginx
 </code></pre>
+<p>.<a href="https://github.com/how2coding/react-nodejs-nginx/blob/main/Jenkinsfile_build-node-seperate-deploy-node">https://github.com/how2coding/react-nodejs-nginx/blob/main/Jenkinsfile_build-node-seperate-deploy-node</a></p>
 
