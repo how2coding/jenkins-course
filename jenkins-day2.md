@@ -117,4 +117,18 @@ docker push registry.wangchan.io:5000/react-nodejs-nginx
 <pre><code>docker push registry.wangchan.io:5000/react-nodejs-nginx
 </code></pre>
 <p>.<a href="https://github.com/how2coding/react-nodejs-nginx/blob/main/Jenkinsfile_build-node-seperate-deploy-node">https://github.com/how2coding/react-nodejs-nginx/blob/main/Jenkinsfile_build-node-seperate-deploy-node</a></p>
+<h3 id="access-control">Access Control</h3>
+<p>create new user<br>
+manage jenkins -&gt; Users -&gt; create user<br>
+<img src="https://s3.ap-southeast-1.amazonaws.com/subsomboon.wangchan.io/assets/Screenshot+2023-08-05+093246.png" alt="enter image description here"><br>
+manage jenkins -&gt; Security<br>
+at<br>
+Authorization section select -&gt; Project-based Matrix Authorization Strategy</p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/subsomboon.wangchan.io/assets/Screenshot+2023-08-05+092758.png" alt="enter image description here"></p>
+<p>Project -&gt; Configure<br>
+select Enable project-based security<br>
+add user1 for access this project</p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/subsomboon.wangchan.io/assets/Screenshot+2023-08-05+093043.png" alt="enter image description here"></p>
+<p>login with user1</p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/subsomboon.wangchan.io/assets/Screenshot+2023-08-05+093323.png" alt="enter image description here"></p>
 
