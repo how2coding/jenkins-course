@@ -57,6 +57,16 @@ copy agent.jar to dicrectory c:\jenkins</p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy4.png" alt="enter image description here"></p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy5.png" alt="enter image description here"></p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/how2coding.com/jenkins/day3/mswebdeploy6.png" alt="enter image description here"></p>
+<p>Manage Jenkins -&gt; tool<br>
+<img src="https://s3.ap-southeast-1.amazonaws.com/www.how2coding.com/images/Screenshot+2023-08-06+105410.png" alt="enter image description here"></p>
+<p>At job</p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/www.how2coding.com/images/Screenshot+2023-08-06+105550.png" alt="enter image description here"></p>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/www.how2coding.com/images/Screenshot+2023-08-06+105614.png" alt="enter image description here"></p>
+<pre><code>/p:configuration="release";platform="any cpu";WebPublishMethod=Package;PackageFileName="\MyFolder\package.zip";DesktopBuildPackageLocation="\MyFolder\package.zip";PackageAsSingleFile=true;PackageLocation="\MyFolder\package.zip";DeployOnBuild=true;DeployTarget=Package
+</code></pre>
+<p><img src="https://s3.ap-southeast-1.amazonaws.com/www.how2coding.com/images/Screenshot+2023-08-06+105644.png" alt="enter image description here"></p>
+<pre><code>"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe"  -verb:sync  -source:package="c:\MyFolder\package.zip"  -dest:auto,computerName=EC2AMAZ-A2QGC57  -setParam:"IIS Web Application Name"="TestJenkins" -allowUntrusted=true
+</code></pre>
 <h2 id="seperate-machine">Seperate Machine</h2>
 <p><img src="https://file.wangchan.io/staticcontent/jenkinscourse/architecture.png" alt="enter image description here"></p>
 <h2 id="install-docker-registry">install docker registry</h2>
