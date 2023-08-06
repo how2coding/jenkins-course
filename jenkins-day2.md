@@ -131,4 +131,6 @@ add user1 for access this project</p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/subsomboon.wangchan.io/assets/Screenshot+2023-08-05+093043.png" alt="enter image description here"></p>
 <p>login with user1</p>
 <p><img src="https://s3.ap-southeast-1.amazonaws.com/subsomboon.wangchan.io/assets/Screenshot+2023-08-05+093323.png" alt="enter image description here"></p>
+<h3 id="scripted-pipeline">Scripted pipeline</h3>
+<p><a href="https://github.com/how2coding/jenkins-groovy">https://github.com/how2coding/jenkins-groovy</a></p>
 
